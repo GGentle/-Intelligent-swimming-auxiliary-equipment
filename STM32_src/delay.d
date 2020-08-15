@@ -1,0 +1,9 @@
+.\delay.o: SYSTEM\delay.c
+.\delay.o: SYSTEM\delay.h
+.\delay.o: SYSTEM\sys.h
+.\delay.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.4\Device\Include\stm32f10x.h
+.\delay.o: .\include\core_cm3.h
+.\delay.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\delay.o: .\include\core_cmInstr.h
+.\delay.o: .\include\core_cmFunc.h
+.\delay.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.4\Device\Include\system_stm32f10x.h

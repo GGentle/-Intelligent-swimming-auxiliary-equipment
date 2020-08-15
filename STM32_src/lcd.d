@@ -1,0 +1,11 @@
+.\lcd.o: HARDWARE\lcd.c
+.\lcd.o: HARDWARE\lcd.h
+.\lcd.o: .\SYSTEM\sys.h
+.\lcd.o: E:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\stm32f10x.h
+.\lcd.o: .\include\core_cm3.h
+.\lcd.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\lcd.o: .\include\core_cmInstr.h
+.\lcd.o: .\include\core_cmFunc.h
+.\lcd.o: E:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\system_stm32f10x.h
+.\lcd.o: .\SYSTEM\delay.h
+.\lcd.o: HARDWARE\font.h

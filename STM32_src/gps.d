@@ -1,0 +1,15 @@
+.\gps.o: HARDWARE\GPS\gps.c
+.\gps.o: HARDWARE\GPS\gps.h
+.\gps.o: .\SYSTEM\sys.h
+.\gps.o: E:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\stm32f10x.h
+.\gps.o: .\include\core_cm3.h
+.\gps.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\gps.o: .\include\core_cmInstr.h
+.\gps.o: .\include\core_cmFunc.h
+.\gps.o: E:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\system_stm32f10x.h
+.\gps.o: .\SYSTEM\delay.h
+.\gps.o: HARDWARE\GPS\usart1.h
+.\gps.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\gps.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\gps.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\gps.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

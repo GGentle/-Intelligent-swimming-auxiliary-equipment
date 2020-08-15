@@ -1,0 +1,9 @@
+.\gpiopwm.o: HARDWARE\gpiopwm.c
+.\gpiopwm.o: .\SYSTEM\sys.h
+.\gpiopwm.o: E:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\stm32f10x.h
+.\gpiopwm.o: .\include\core_cm3.h
+.\gpiopwm.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\gpiopwm.o: .\include\core_cmInstr.h
+.\gpiopwm.o: .\include\core_cmFunc.h
+.\gpiopwm.o: E:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\system_stm32f10x.h
+.\gpiopwm.o: HARDWARE\gpiopwm.h

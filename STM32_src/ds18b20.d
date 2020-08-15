@@ -1,0 +1,10 @@
+.\ds18b20.o: HARDWARE\ds18b20.c
+.\ds18b20.o: HARDWARE\ds18b20.h
+.\ds18b20.o: .\SYSTEM\sys.h
+.\ds18b20.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.4\Device\Include\stm32f10x.h
+.\ds18b20.o: .\include\core_cm3.h
+.\ds18b20.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\ds18b20.o: .\include\core_cmInstr.h
+.\ds18b20.o: .\include\core_cmFunc.h
+.\ds18b20.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.4\Device\Include\system_stm32f10x.h
+.\ds18b20.o: .\SYSTEM\delay.h

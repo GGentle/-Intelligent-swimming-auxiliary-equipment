@@ -1,0 +1,10 @@
+.\key.o: HARDWARE\GPS\key.c
+.\key.o: HARDWARE\GPS\key.h
+.\key.o: .\SYSTEM\sys.h
+.\key.o: E:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\stm32f10x.h
+.\key.o: .\include\core_cm3.h
+.\key.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\key.o: .\include\core_cmInstr.h
+.\key.o: .\include\core_cmFunc.h
+.\key.o: E:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\system_stm32f10x.h
+.\key.o: .\SYSTEM\delay.h
