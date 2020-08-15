@@ -1,0 +1,171 @@
+C51 COMPILER V9.02   CHANGE_DATA                                                           09/27/2016 22:24:04 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE CHANGE_DATA
+OBJECT MODULE PLACED IN change_data.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE change_data.c COMPACT BROWSE INCDIR(..\手表界面+nrf-提升) DEBUG OBJECTEXTEN
+                    -D
+
+line level    source
+
+   1          #include "tft.h"
+   2          #include "change_data.h"
+   3          
+   4          
+   5          #define uchar unsigned char
+   6          #define uint unsigned int
+   7          
+   8          
+   9          uchar *num_emger[10]={"0","1","2","3","4","5","6","7","8","9"};//显示的十个字符
+  10          uchar rx_buf_c[5];//储存接受来的五个字符数
+  11          
+  12          
+  13          void ballx(uchar a,uint b,uint c)//把分辨出的百位，对应相应字符，显示出来
+  14          {
+  15   1         switch(a)
+  16   1         {
+  17   2                case 1:{ Display_ASCII8X16_Color(c,b,num_emger[1],BLACK,WHITE) ; break;}
+  18   2                case 2:{ Display_ASCII8X16_Color(c,b,num_emger[2],BLACK,WHITE) ; break;}
+  19   2                case 3:{ Display_ASCII8X16_Color(c,b,num_emger[3],BLACK,WHITE) ; break;}
+  20   2                case 4:{ Display_ASCII8X16_Color(c,b,num_emger[4],BLACK,WHITE) ; break;}
+  21   2                case 5:{ Display_ASCII8X16_Color(c,b,num_emger[5],BLACK,WHITE) ; break;}
+  22   2                case 6:{ Display_ASCII8X16_Color(c,b,num_emger[6],BLACK,WHITE) ; break;}
+  23   2                case 7:{ Display_ASCII8X16_Color(c,b,num_emger[7],BLACK,WHITE) ; break;}
+  24   2                case 8:{ Display_ASCII8X16_Color(c,b,num_emger[8],BLACK,WHITE) ; break;}
+  25   2                case 9:{ Display_ASCII8X16_Color(c,b,num_emger[9],BLACK,WHITE) ; break;}
+  26   2                default:{ break;}
+  27   2         }
+  28   1      }
+  29          
+  30          
+  31          void bally(uchar a,uint b,uint c)//把分辨出的十位，对应相应字符，显示出来
+  32          {
+  33   1         switch (a)
+  34   1         {
+  35   2                case 0:{ Display_ASCII8X16_Color(c,b,num_emger[0],BLACK,WHITE) ;  break;}
+  36   2                case 1:{ Display_ASCII8X16_Color(c,b,num_emger[1],BLACK,WHITE) ; break;}
+  37   2                case 2:{ Display_ASCII8X16_Color(c,b,num_emger[2],BLACK,WHITE) ; break;}
+  38   2                case 3:{ Display_ASCII8X16_Color(c,b,num_emger[3],BLACK,WHITE) ; break;}
+  39   2                case 4:{ Display_ASCII8X16_Color(c,b,num_emger[4],BLACK,WHITE) ; break;}
+  40   2                case 5:{ Display_ASCII8X16_Color(c,b,num_emger[5],BLACK,WHITE) ; break;}
+  41   2                case 6:{ Display_ASCII8X16_Color(c,b,num_emger[6],BLACK,WHITE) ; break;}
+  42   2                case 7:{ Display_ASCII8X16_Color(c,b,num_emger[7],BLACK,WHITE) ; break;}
+  43   2                case 8:{ Display_ASCII8X16_Color(c,b,num_emger[8],BLACK,WHITE) ; break;}
+  44   2                case 9:{ Display_ASCII8X16_Color(c,b,num_emger[9],BLACK,WHITE) ; break;}
+  45   2         }             
+  46   1      }
+  47          
+  48          
+  49          void ballz(uchar a,uint b,uint c)//把分辨出的个位，对应相应字符，显示出来
+  50          {
+  51   1         switch(a)
+  52   1         {
+  53   2                case 0:{ Display_ASCII8X16_Color(c,b,num_emger[0],BLACK,WHITE) ; break;}
+  54   2                case 1:{ Display_ASCII8X16_Color(c,b,num_emger[1],BLACK,WHITE) ; break;}
+C51 COMPILER V9.02   CHANGE_DATA                                                           09/27/2016 22:24:04 PAGE 2   
+
+  55   2                case 2:{ Display_ASCII8X16_Color(c,b,num_emger[2],BLACK,WHITE) ; break;}
+  56   2                case 3:{ Display_ASCII8X16_Color(c,b,num_emger[3],BLACK,WHITE) ; break;}
+  57   2                case 4:{ Display_ASCII8X16_Color(c,b,num_emger[4],BLACK,WHITE) ; break;}
+  58   2                case 5:{ Display_ASCII8X16_Color(c,b,num_emger[5],BLACK,WHITE) ; break;}
+  59   2                case 6:{ Display_ASCII8X16_Color(c,b,num_emger[6],BLACK,WHITE) ; break;}
+  60   2                case 7:{ Display_ASCII8X16_Color(c,b,num_emger[7],BLACK,WHITE) ; break;}
+  61   2                case 8:{ Display_ASCII8X16_Color(c,b,num_emger[8],BLACK,WHITE) ; break;}
+  62   2                case 9:{ Display_ASCII8X16_Color(c,b,num_emger[9],BLACK,WHITE) ; break;}
+  63   2         }
+  64   1      }
+  65          
+  66          
+  67          void classify(uchar a,uint b,uint c) //把数据分成百，十，个三个数
+  68          {
+  69   1              uchar x,y,z; //得出数据的百，十，个位
+  70   1              
+  71   1      
+  72   1              x=a/100;//百位
+  73   1          if(x==0)
+  74   1              {
+  75   2                y=a/10;//十位
+  76   2                z=a%10; //个位
+  77   2              }
+  78   1              else
+  79   1              {
+  80   2               y=(a-100)/10;//十位
+  81   2               z=(a-100)%10;//个位
+  82   2              }
+  83   1              switch(b)
+  84   1              {
+  85   2                 case 30:     //温度数据位置
+  86   2                 {
+  87   3              //   ballx(x,b,c);//显示百位
+  88   3                   bally(y,b,c);//显示十位
+  89   3               ballz(z,b,c+12);//显示个位
+  90   3                       break;
+  91   3                 }
+  92   2                 case 50: //纬度数据位置
+  93   2                 {
+  94   3       //          ballx(x,b);//显示百位
+  95   3                   bally(y,b,c);//显示十位
+  96   3               ballz(z,b,c+8);//显示个位
+  97   3                       break;
+  98   3                 }
+  99   2                 case 70:     //经度数据位置
+ 100   2                 {
+ 101   3                       ballx(x,b,c);//显示百位
+ 102   3                   bally(y,b,c+8);//显示十位
+ 103   3               ballz(z,b,c+8+8);//显示个位
+ 104   3                       break;
+ 105   3                 }
+ 106   2              }
+ 107   1         
+ 108   1      
+ 109   1      }
+ 110          
+ 111          
+ 112          void emger(uchar a,uchar b,uchar c,uchar d,uchar e)     //把接受来的数据进行处理
+ 113           {
+ 114   1              uint g;//确定y轴数据位置
+ 115   1              uint h=50;//确定数据的x轴位置
+ 116   1      
+C51 COMPILER V9.02   CHANGE_DATA                                                           09/27/2016 22:24:04 PAGE 3   
+
+ 117   1              rx_buf_c[0]=a; //处理接受来的五个数据
+ 118   1              rx_buf_c[1]=b;
+ 119   1              rx_buf_c[2]=c;
+ 120   1              rx_buf_c[3]=d;
+ 121   1              rx_buf_c[4]=e;
+ 122   1      
+ 123   1              g=30;h=50;//确定温度数据位置
+ 124   1              classify(rx_buf_c[0],g,h);
+ 125   1              Display_ASCII8X16_Color(80,30,"%C",BLACK,WHITE) ;
+ 126   1      
+ 127   1              g=50;h=50;//确定纬度数据位置
+ 128   1              classify(rx_buf_c[3],g,h);
+ 129   1              Display_ASCII8X16_Color(68,50,".",BLACK,WHITE);
+ 130   1              h=50+8+20;//确定纬度小数点之后的数据位置
+ 131   1              classify(rx_buf_c[4],g,h);
+ 132   1              Display_ASCII8X16_Color(96,50,"N",BLACK,WHITE) ;
+ 133   1              
+ 134   1              g=70;h=50;//确定经度数据位置
+ 135   1              classify(rx_buf_c[1],g,h);
+ 136   1              Display_ASCII8X16_Color(74,70,".",BLACK,WHITE);
+ 137   1              h=50+8+8+8;//确定经度小数点之后的数据位置
+ 138   1              classify(rx_buf_c[2],g,h);
+ 139   1              Display_ASCII8X16_Color(100,70,"E",BLACK,WHITE) ;
+ 140   1      
+ 141   1              
+ 142   1       }
+ 143          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1309    ----
+   CONSTANT SIZE    =     29    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =     35      27
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

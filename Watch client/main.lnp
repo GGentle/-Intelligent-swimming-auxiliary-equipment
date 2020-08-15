@@ -1,0 +1,8 @@
+"main.obj",
+"TFT.obj",
+"jianpan.obj",
+"screen_nrf.obj",
+"change_data.obj" 
+TO "main" 
+RAMSIZE(256) 
+DISABLEWARNING (16) 
